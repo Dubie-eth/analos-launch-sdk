@@ -1,0 +1,17 @@
+# CODEOWNERS file
+# This file defines who is the owner for different parts of the codebase
+# Syntax: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners - these people will be requested for review on all pull requests
+* @Dubie-eth
+
+# SDK core files - always require owner review
+/index.ts @Dubie-eth
+/package.json @Dubie-eth
+/tsconfig.json @Dubie-eth
+/README.md @Dubie-eth
+
+# Configuration files
+/.github/ @Dubie-eth
+/LICENSE @Dubie-eth
+
