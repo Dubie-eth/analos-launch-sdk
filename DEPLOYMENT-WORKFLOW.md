@@ -374,11 +374,54 @@ Then update your source files with this ID.
 
 ---
 
+## 🔄 Updating a Deployed Program
+
+### Option 1: Upgrade Existing Program
+
+If you need to update a deployed program:
+
+```bash
+# 1. Build new version in Playground
+# 2. Download new .so file
+# 3. Deploy using same program ID keypair
+
+solana program deploy \
+  my_program_v2.so \
+  --url https://rpc.analos.io \
+  --keypair ~/.config/solana/id.json \
+  --program-id ~/Downloads/my_program-keypair.json \
+  --use-rpc
+```
+
+**Note:** This upgrades the existing program - the program ID stays the same!
+
+### Option 2: Deploy New Version
+
+If you want to deploy a completely new version with a new ID:
+
+```bash
+# 1. Generate new program ID in Playground
+# 2. Download new artifacts
+# 3. Deploy as new program
+
+solana program deploy \
+  my_program_v2.so \
+  --url https://rpc.analos.io \
+  --keypair ~/.config/solana/id.json \
+  --program-id ~/Downloads/my_program_v2-keypair.json \
+  --use-rpc
+```
+
+**Note:** This creates a new program - you'll need to update all references!
+
+---
+
 ## 🔗 Related Guides
 
 - **Solana Playground Guide:** See your project's deployment guides
 - **SDK Usage:** See `README.md` for SDK examples
 - **Verification:** See `PRODUCTION-DEPLOYMENT-STATUS.md`
+- **Enabling Updates:** See `.github/ENABLE-UPDATES-GUIDE.md`
 
 ---
 
