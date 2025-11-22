@@ -453,6 +453,49 @@ Built for the Analos blockchain ecosystem.
 - **GitHub:** https://github.com/analos/analos-nft-launchpad
 - **Issues:** https://github.com/analos/analos-nft-launchpad/issues
 
+## 📚 Additional Documentation
+
+### Deployment Workflow
+
+For a complete step-by-step guide on deploying programs to Analos:
+
+**See: [`DEPLOYMENT-WORKFLOW.md`](DEPLOYMENT-WORKFLOW.md)**
+
+This guide covers:
+- ✅ Building and testing in Solana Playground (devnet)
+- ✅ Downloading artifacts (binary, keypair, IDL)
+- ✅ Deploying to Analos mainnet via CLI
+- ✅ Using proper flags (`--use-rpc`) that work for Analos
+- ✅ Verification and troubleshooting
+
+### Quick Deployment Workflow
+
+**1. Build in Playground:**
+- Upload code to https://beta.solpg.io
+- Generate program ID
+- Build and deploy to devnet
+
+**2. Download Artifacts:**
+- Download `.so` file (binary)
+- Download `-keypair.json` file (program keypair) ⚠️ SECRET
+- Download IDL `.json` file
+
+**3. Deploy to Analos:**
+```bash
+solana program deploy \
+  my_program.so \
+  --url https://rpc.analos.io \
+  --keypair ~/.config/solana/id.json \
+  --program-id my_program-keypair.json \
+  --use-rpc
+```
+
+**4. Verify:**
+```typescript
+import { verifyProgram } from "@analos/launch-sdk";
+const info = await verifyProgram(programId, "https://rpc.analos.io");
+```
+
 ## Related Packages
 
 - `@analos/nft-escrow-sdk` - NFT Escrow program SDK
