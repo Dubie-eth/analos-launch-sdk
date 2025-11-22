@@ -24,6 +24,54 @@ TypeScript SDK for deploying and launching programs on Analos blockchain.
 npm install @analos/launch-sdk
 ```
 
+---
+
+## 🔧 Troubleshooting Deployment Issues
+
+Having trouble deploying to Analos? Check out our comprehensive troubleshooting guide:
+
+- **[TROUBLESHOOTING-ANALOS-DEPLOYMENT.md](./TROUBLESHOOTING-ANALOS-DEPLOYMENT.md)** - Common errors and solutions
+- **[QUICK-DEPLOY-GUIDE.md](./QUICK-DEPLOY-GUIDE.md)** - Step-by-step deployment instructions
+
+**Quick Helper Scripts:**
+- **Windows PowerShell:** `deploy-to-analos.ps1`
+- **Linux/Mac Bash:** `deploy-to-analos.sh`
+
+These scripts automatically:
+- ✅ Verify all files exist and are valid
+- ✅ Check deployer and program account balances
+- ✅ Fund program account if needed
+- ✅ Verify program ID matches keypair
+- ✅ Deploy with correct flags for Analos
+
+**Usage Example:**
+```powershell
+# Windows PowerShell
+.\deploy-to-analos.ps1 `
+  -ProgramBinaryPath "C:\path\to\program.so" `
+  -ProgramKeypairPath "C:\path\to\program-keypair.json" `
+  -DeployerKeypairPath "C:\path\to\deployer-keypair.json" `
+  -FundAmount 3.6
+
+# Linux/Mac Bash
+./deploy-to-analos.sh \
+  --binary /path/to/program.so \
+  --program-keypair /path/to/program-keypair.json \
+  --deployer-keypair /path/to/deployer-keypair.json \
+  --fund-amount 3.6
+```
+
+**Verify-only mode (test without deploying):**
+```powershell
+# Windows
+.\deploy-to-analos.ps1 -ProgramBinaryPath "..." -ProgramKeypairPath "..." -DeployerKeypairPath "..." -VerifyOnly
+
+# Linux/Mac
+./deploy-to-analos.sh --binary "..." --program-keypair "..." --deployer-keypair "..." --verify-only
+```
+
+---
+
 ## Quick Start
 
 ### Get Deployment Command
