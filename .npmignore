@@ -1,0 +1,39 @@
+# Source files
+*.ts
+!dist/**/*.d.ts
+
+# Development files
+tsconfig.json
+*.log
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+test/
+tests/
+*.test.ts
+*.spec.ts
+
+# Documentation
+*.md
+!README.md
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+
+# Examples
+examples/
+
+# Temporary files
+*.tmp
+*.temp
+

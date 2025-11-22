@@ -1,0 +1,49 @@
+{
+  "name": "@analos/launch-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for deploying and launching programs on Analos blockchain",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "solana",
+    "analos",
+    "deployment",
+    "program",
+    "launch",
+    "blockchain",
+    "anchor",
+    "sdk"
+  ],
+  "author": "Analos Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@coral-xyz/anchor": "^0.30.0",
+    "@solana/web3.js": "^1.87.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.23",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.0",
+    "@solana/web3.js": "^1.87.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/analos/analos-launch-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/analos/analos-launch-sdk/issues"
+  },
+  "homepage": "https://github.com/analos/analos-launch-sdk#readme"
+}
+
